@@ -1,0 +1,110 @@
+.navbarWrap {
+    @media only screen and (max-width:768px) {
+        display: none;
+    }
+
+    display: table;
+    float: right;
+    padding-right: 85px;
+    font-size: 15px;
+    height: 78px;
+
+    ul {
+        padding-left: 0;
+    }
+
+    .navbar {
+        display: table-cell;
+        vertical-align: middle;
+        list-style: none;
+
+        li {
+            position: relative;
+            display: inline-block;
+            margin-right: 22px;
+            padding: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                display: block;
+                padding-bottom: 9px;
+                color: #898989;
+                border: none;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: bold;
+
+                &:hover {
+                    color: #000000;
+                }
+            }
+
+            >a {
+                border-bottom: 2px solid transparent;
+            }
+
+            &.current {
+                >a {
+                    border-bottom: 2px solid #151515;
+                    color: #000000;
+                }
+            }
+
+            li {
+                display: block;
+                text-align: left;
+                padding: 0;
+                margin: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                min-height: 48px;
+                width: 100%;
+
+                &:last-child {
+                    border: none;
+                }
+
+                a {
+                    white-space: nowrap;
+                    padding: 16.5px 25px;
+                    font-size: 14px;
+                    line-height: 15px;
+                    display: block;
+                    color: #8E8E8E;
+
+                    &:hover {
+                        background: transparent;
+                        color: #000000;
+                    }
+                }
+            }
+
+            &:hover {
+                .subMenu {
+                    display: block;
+                }
+            }
+
+            img {
+                height: 4rem;
+                width: 4rem;
+                border-radius: 100%;
+            }
+        }
+
+        ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            background: #f4f4f4;
+            border-radius: 0 0 3px 3px;
+            font-size: 11px;
+            z-index: 500;
+            display: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
