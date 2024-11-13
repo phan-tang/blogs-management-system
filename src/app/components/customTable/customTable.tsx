@@ -6,7 +6,7 @@ export default function CustomTable({ tableData, tableName }: { tableData: any[]
     const tableHeaders = Object.keys(tableData[0]);
     return (
         <div className={styles.customTable}>
-            <Table responsive>
+            <Table responsive='xl'>
                 <thead>
                     <tr>
                         {tableHeaders.map((tableHeader, headerIndex) => {

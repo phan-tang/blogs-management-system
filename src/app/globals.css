@@ -138,6 +138,7 @@ td:last-child {
 }
 
 .page-content {
+  width: 100%;
   text-decoration: none;
   text-align: center;
 }

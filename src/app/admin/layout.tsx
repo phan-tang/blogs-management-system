@@ -9,7 +9,7 @@ export default function AdminLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <section className="container admin">
+        <section className="admin">
             <div className="row admin-nav-items">
                 {adminNavItems.map((navItem, namItemIndex) => {
                     return (

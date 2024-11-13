@@ -45,7 +45,7 @@ export default function UsersManagement() {
         <>
             {loading && <Loading />}
             {!loading && <div className="page">
-                <div>
+                <div className="page-content">
                     <div className={styles.users}>
                         <h3>Users Management</h3>
                         <CustomTable tableData={tableItems} tableName="users" />
