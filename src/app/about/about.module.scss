@@ -1,0 +1,37 @@
+.about {
+    margin-top: 6.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .row {
+        max-width: 950px;
+
+        .contentMedia {
+            position: relative;
+            margin-bottom: 4.8rem;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .primaryContent {
+            padding-left: 6rem;
+            padding-right: 6rem;
+
+            img {
+                max-width: 910px;
+                margin: 3rem 0 3rem -6rem;
+            }
+
+            .entryTitle {
+                font-size: 3.3rem;
+                line-height: 1.364;
+                margin-bottom: 0.9rem;
+            }
+        }
+    }
+
+}
