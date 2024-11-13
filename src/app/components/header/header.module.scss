@@ -3,22 +3,20 @@
     background-size: 46px 29px;
     border-bottom: 1px solid #E5E5E5;
     height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .headerContent {
 
         height: auto;
         max-width: 1290px;
-        position: absolute;
-        top: 24px;
-        left: 0;
-        right: 0;
         width: 100%;
 
         .logo {
-            position: absolute;
-            left: 35px;
-            top: 6px;
+            float: left;
             z-index: 601;
+            padding-left: 35px;
 
             a {
                 display: block;
