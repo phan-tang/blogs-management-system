@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { navItems } from '@/app/lib/constants';
 import { getSourceLink } from '@/app/lib/plugins';
-import { NavItem } from '@/app/models/navIModel';
+import { NavItem } from '@/app/models/navItemModel';
 import styles from './navbar.module.scss';
 
 export default function Navbar() {

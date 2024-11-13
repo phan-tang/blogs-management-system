@@ -1,4 +1,4 @@
-import { NavItem } from "../models/navIModel";
+import { NavItem } from "../models/navItemModel";
 import { ImageItem } from "../models/imageModel";
 import { PictureCarouselItem } from "../models/imageModel";
 import { FormItem } from "../models/formModel";

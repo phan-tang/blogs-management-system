@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NavItem } from "@/app/models/navIModel";
+import { NavItem } from "@/app/models/navItemModel";
 import { offcanvasItems, userUnknownImage } from "@/app/lib/constants";
 import { getSourceLink } from "@/app/lib/plugins";
 
