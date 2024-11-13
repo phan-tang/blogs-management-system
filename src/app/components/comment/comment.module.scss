@@ -1,0 +1,44 @@
+.comment {
+    .avatar {
+        position: absolute;
+        left: 0;
+        display: block;
+        height: 6rem;
+        width: 6rem;
+
+        img {
+            margin-top: 0.6rem;
+            height: 6rem;
+            width: 6rem;
+            border-radius: 100%;
+        }
+    }
+
+    .commentInfo {
+
+        cite {
+            font-size: 1.2rem;
+            font-style: normal;
+            color: #151515;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+        .commentMeta {
+            font-size: 1rem;
+            line-height: 2rem;
+            display: block;
+            color: #888888;
+        }
+
+        .commentText {
+            clear: both;
+            margin: 1rem 0 0 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
