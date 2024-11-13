@@ -1,95 +1,68 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+import { useEffect, useState } from "react";
+
+import { getBlogs } from "./services/blogService";
+import { BlogItem } from "./models/blogModel";
+import PictureCarousel from "./components/pictureCarousel/pictureCarousel";
+import CustomPagination from "./components/customPagination/customPagination";
+import Card from "./components/card/card";
+import { resizeGridRow } from "./lib/plugins";
+import { toastError } from "./lib/toastify";
+import styles from "./page.module.scss";
+import Loading from "./loading";
+import { pageSize } from "./lib/constants";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const carouselId = `home-carousel`;
+  const [cardItems, setCardItems] = useState<BlogItem[]>([]);
+  const [blogsData, setBlogsData] = useState<BlogItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const resizeAllItemsGridRow = () => {
+    cardItems.forEach((item, index) => {
+      let id: string = `home-card-${index}`;
+      resizeGridRow(id);
+    })
+  }
+
+  const handleChangePage = (pageIndex: number): void => {
+    setLoading(true);
+    setCardItems(blogsData.slice(pageSize * (pageIndex - 1), pageSize * pageIndex));
+    setLoading(false);
+    window.scrollTo(0, 0);
+  }
+
+  useEffect(() => {
+    getBlogs().then(
+      (data) => {
+        setBlogsData(data);
+        setCardItems(data.slice(0, pageSize));
+        setLoading(false);
+      }
+    ).catch((err) => {
+      toastError('Failed to load blogs data')
+    });
+  }, []);
+
+  return (
+    <>
+      {loading && <Loading />}
+      {!loading && <section className={styles.home}>
+        <div className={styles.homeContent}>
+          <div className="row">
+            <div className="masonry" onLoad={() => { resizeAllItemsGridRow() }}>
+              <PictureCarousel carouselId={carouselId} />
+              {cardItems.map((item, index) => {
+                return (
+                  <Card cardItem={item} id={`home-card-${index}`} key={`home-card-${index}`} />
+                );
+              })}
+            </div>
+          </div>
+          <CustomPagination numberOfPages={Math.ceil(blogsData.length / pageSize)} handleChangePage={handleChangePage} />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>}
+    </>
   );
 }
