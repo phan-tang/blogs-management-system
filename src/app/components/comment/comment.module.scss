@@ -1,5 +1,25 @@
 .comment {
     .avatar {
+        @media only screen and (max-width:900px) {
+            height: 5rem;
+            width: 5rem;
+        }
+
+        @media only screen and (max-width:708px) {
+            height: 4rem;
+            width: 4rem;
+        }
+
+        @media only screen and (max-width:560px) {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        @media only screen and (max-width:412px) {
+            height: 2rem;
+            width: 2rem;
+        }
+
         position: absolute;
         left: 0;
         display: block;
@@ -7,6 +27,26 @@
         width: 6rem;
 
         img {
+            @media only screen and (max-width:900px) {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            @media only screen and (max-width:708px) {
+                height: 4rem;
+                width: 4rem;
+            }
+
+            @media only screen and (max-width:560px) {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            @media only screen and (max-width:412px) {
+                height: 2rem;
+                width: 2rem;
+            }
+
             margin-top: 0.6rem;
             height: 6rem;
             width: 6rem;
@@ -17,6 +57,14 @@
     .commentInfo {
 
         cite {
+            @media only screen and (max-width:692px) {
+                font-size: 1rem;
+            }
+
+            @media only screen and (max-width:560px) {
+                font-size: 0.8rem;
+            }
+
             font-size: 1.2rem;
             font-style: normal;
             color: #151515;
@@ -25,6 +73,16 @@
         }
 
         .commentMeta {
+            @media only screen and (max-width:692px) {
+                font-size: 0.8rem;
+                line-height: 1.2rem;
+            }
+
+            @media only screen and (max-width:560px) {
+                font-size: 0.6rem;
+                line-height: 1rem;
+            }
+
             font-size: 1rem;
             line-height: 2rem;
             display: block;

@@ -63,10 +63,10 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
                     <div className={styles.row}>
                         <article>
                             <div className={'row ' + styles.primaryContent}>
-                                <div className='col-4'>
+                                <div className='col-lg-4 col-md-4 col-sm-6 col-xs-6'>
                                     <img src={`../${blogItem.sourceLink}`} alt={blogItem.title.replaceAll(' ', '-')} />
                                 </div>
-                                <div className='col-8'>
+                                <div className='col-lg-8 col-md-8 col-sm-6 col-xs-6'>
                                     <div className={styles.blogInfo}>
                                         <h1 className={styles.pageTitle}>{blogItem.title}</h1>
                                         <ul className={styles.entryMeta}>
