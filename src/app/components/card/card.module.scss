@@ -1,0 +1,147 @@
+.card {
+    @media only screen and (max-width:960px) {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    margin-bottom: 40px;
+    padding: 0 20px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .entryThumb {
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+
+        .thumbLink {
+            &::before {
+                content: "";
+                display: block;
+                background: rgba(0, 0, 0, 0.8);
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            &::after {
+                content: "...";
+                font-size: 2.5rem;
+                z-index: 1;
+                display: block;
+                height: 90px;
+                width: 90px;
+                letter-spacing: -2.6px;
+                line-height: 90px;
+                margin-left: -45px;
+                margin-top: -45px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                text-align: center;
+                color: #FFFFFF;
+                opacity: 0;
+                visibility: hidden;
+                -webkit-transform: scale(0.5);
+                -ms-transform: scale(0.5);
+                transform: scale(0.5);
+            }
+
+            img {
+                vertical-align: bottom;
+                max-width: 100%;
+                height: auto;
+            }
+
+        }
+
+        &:hover {
+            .thumbLink {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    transform: scale(1);
+                }
+
+                img {
+                    -webkit-transform: scale(1.05);
+                    -ms-transform: scale(1.05);
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .audioWrap {
+            position: absolute !important;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            audio {
+                width: 100%;
+            }
+        }
+    }
+
+    .entryText {
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+        padding: 1.2rem 2.2rem 3rem;
+        background-color: white;
+
+        a {
+            color: #000000;
+        }
+
+        .entryHeader {
+            .entryMeta {
+                font-size: 1rem;
+                margin-bottom: 1.2rem;
+
+                .catLinks {
+                    a {
+                        &::after {
+                            content: ", ";
+                        }
+
+                        &:last-child::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .entryTitle {
+            font-size: 1.3rem;
+            line-height: 1.32;
+            margin-bottom: 1.8rem;
+
+            a {
+                &:hover {
+                    border-bottom: 1px solid rgba(21, 21, 21, 0.2);
+                }
+
+            }
+        }
+
+        .entryExcerpt {
+            font-size: .8rem;
+            line-height: 1.7rem;
+            color: #999999;
+        }
+    }
+}
