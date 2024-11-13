@@ -1,0 +1,112 @@
+.offcanvas-wrapper {
+    @media only screen and (max-width:768px) {
+        display: block;
+    }
+
+    .offcanvas-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+
+
+        &:hover {
+            svg {
+                fill: white;
+            }
+        }
+    }
+
+    float: right;
+    padding-right: 30px;
+    font-size: 15px;
+    height: 78px;
+    display: none;
+}
+
+.offcanvas {
+    @media only screen and (max-width:768px) {
+        display: block;
+    }
+
+    display: none;
+
+    img {
+        height: 4rem;
+        width: 4rem;
+        border-radius: 100%;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    .navbar {
+        display: table;
+        width: 100%;
+
+        li {
+            list-style: none;
+
+            a {
+                display: block;
+                padding-bottom: 9px;
+                color: #898989;
+                border: none;
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: bold;
+
+                &:hover {
+                    color: #000000;
+                }
+            }
+
+            &:hover {
+                .sub-menu {
+                    display: block;
+                }
+            }
+
+            &.current {
+                >a {
+                    color: #000000;
+                }
+            }
+        }
+
+        ul {
+            top: 100%;
+            left: 0;
+            padding-left: 30px;
+            margin: 0;
+            background: #f4f4f4;
+            border-radius: 0 0 3px 3px;
+            font-size: 11px;
+            z-index: 500;
+            display: none;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .title-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            color: #898989;
+            font-weight: bold;
+
+            &:hover {
+                color: #000000;
+            }
+        }
+    }
+}
