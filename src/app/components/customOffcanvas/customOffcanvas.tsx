@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { NavItem } from "@/app/models/navItemModel";
 import { offcanvasItems, userUnknownImage } from "@/app/lib/constants";
@@ -50,7 +51,7 @@ export default function CustomOffcanvas() {
                     <Offcanvas.Title>
                         <div className="row">
                             <div className="col-4">
-                                <img width="50" height="50" src={currentUser ? getSourceLink(currentUser.image, pathName) : getSourceLink(userUnknownImage, pathName)} alt="user-avatar" />
+                                <Image width={50} height={50} src={currentUser ? `/${currentUser.image}` : `/${userUnknownImage}`} alt="user-avatar" />
                             </div>
                             <div className="col-8 title-action">
                                 {currentUser ?

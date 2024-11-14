@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image';
 import styles from './card.module.scss';
 import { BlogItem } from '@/app/models/blogModel';
 import { getSourceLink } from '@/app/lib/plugins';
@@ -13,7 +13,7 @@ export default function Card({ cardItem, id }: { cardItem: BlogItem, id: string 
             <div className='content'>
                 <div className={styles.entryThumb}>
                     <a href={`/blog/${cardItem.id}`} className={styles.thumbLink}>
-                        <img src={getSourceLink(cardItem.sourceLink, pathName)} alt={cardItem.title.replaceAll(' ', '-')} />
+                        <Image src={`/${cardItem.sourceLink}`} alt={cardItem.title.replaceAll(' ', '-')} width={100} height={100} />
                     </a>
                     {cardItem.audioLink && <div className={styles.audioWrap}>
                         <audio id="player" src={getSourceLink(cardItem.audioLink, pathName)} controls></audio>

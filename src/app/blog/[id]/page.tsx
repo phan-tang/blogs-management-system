@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState, use } from "react";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { getBlogItem, getComments } from "@/app/services/blogService";
 import { BlogItem, CommentItem } from "@/app/models/blogModel";
-import { getSourceLink, getFixedIndex } from "@/app/lib/plugins";
+import { getFixedIndex } from "@/app/lib/plugins";
 import { userImages, blogCommentFields } from "@/app/lib/constants";
 import { toastError } from "@/app/lib/toastify";
 import styles from './blog.module.scss';
@@ -13,7 +13,6 @@ import CustomForm from "@/app/components/customForm/customForm";
 import Comment from "@/app/components/comment/comment";
 
 export default function Blog({ params }: { params: Promise<{ id: string }> }) {
-    const pathName = usePathname();
     const [blogItem, setBlogItem] = useState<BlogItem | null>(null);
     const [blogComments, setBlogComments] = useState<CommentItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -64,7 +63,7 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
                         <article>
                             <div className={'row ' + styles.primaryContent}>
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-xs-6'>
-                                    <img src={`../${blogItem.sourceLink}`} alt={blogItem.title.replaceAll(' ', '-')} />
+                                    <Image src={`/${blogItem.sourceLink}`} alt={blogItem.title.replaceAll(' ', '-')} width={100} height={100} />
                                 </div>
                                 <div className='col-lg-8 col-md-8 col-sm-6 col-xs-6'>
                                     <div className={styles.blogInfo}>
@@ -89,7 +88,7 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
                         <article>
                             <h2>Large Heading</h2>
                             <p>Harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus <a href="#">omnis voluptas assumenda est</a> id quod maxime placeat facere possimus, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et.</p>
-                            <p><img src={"../images/shutterbug.jpg"} alt="" /></p>
+                            <p><Image src={"/images/shutterbug.jpg"} alt="" width={100} height={100} /></p>
                             <blockquote><p>This is a simple example of a styled blockquote. A blockquote tag typically specifies a section that is quoted from another source of some sort, or highlighting text in your post.</p></blockquote>
                             <p>Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed..</p>
                             <h3>Smaller Heading</h3>
@@ -113,7 +112,7 @@ export default function Blog({ params }: { params: Promise<{ id: string }> }) {
                                 <a href="#">orci</a><a href="#">lectus</a><a href="#">varius</a><a href="#">turpis</a>
                             </p>
                             <div className={styles.authorProfile}>
-                                <img src={getSourceLink(userImages[getFixedIndex(blogItem.id, userImages.length)], pathName)} alt="author-avatar" />
+                                <Image src={`/${userImages[getFixedIndex(blogItem.id, userImages.length)]}`} alt="author-avatar" width={100} height={100} />
                                 <div className="about">
                                     <h4><a href="#">Jonathan Smith</a></h4>
                                     <p>Alias aperiam at debitis deserunt dignissimos dolorem doloribus, fuga fugiat impedit laudantium magni maxime nihil nisi quidem quisquam sed ullam voluptas voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.

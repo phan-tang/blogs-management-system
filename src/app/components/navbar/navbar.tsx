@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { navItems } from '@/app/lib/constants';
 import { getSourceLink } from '@/app/lib/plugins';
@@ -56,7 +57,7 @@ export default function Navbar() {
                 </>
                 {currentUser && <li>
                     <div>
-                        <img width="50" height="50" src={getSourceLink(currentUser.image, pathName)} alt="user-avatar" />
+                        <Image width={50} height={50} src={`/${currentUser.image}`} alt="user-avatar" />
                         <ul className={styles.subMenu}>
                             <li>
                                 <Link href="/admin/users" title="Admin">Admin</Link>

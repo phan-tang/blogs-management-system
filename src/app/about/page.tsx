@@ -1,11 +1,12 @@
 import styles from './about.module.scss';
+import Image from 'next/image';
 
 export default function About() {
     return (
         <section className={styles.about}>
             <div className={styles.row}>
                 <div className={styles.contentMedia}>
-                    <img src={"images/thumbs/about-us.jpg"} alt='content-media'></img>
+                    <Image src={"/images/thumbs/about-us.jpg"} alt='content-media' height={100} width={100} />
                 </div>
                 <div className={styles.primaryContent}>
                     <h1 className={styles.entryTitle}>Learn More About Us.</h1>
