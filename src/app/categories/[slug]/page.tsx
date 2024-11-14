@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useState, use } from 'react';
-
+import { useEffect, useState } from 'react';
 import Loading from '../../loading';
 import Card from '../../components/card/card';
 import CustomPagination from '@/app/components/customPagination/customPagination';
@@ -13,11 +12,11 @@ import { resizeGridRow } from '../../lib/plugins';
 import { categories, pageSize } from '@/app/lib/constants';
 import styles from './../categories.module.scss';
 
-export default function Category({ params }: { params: Promise<{ slug: string }> }) {
+export default function Category({ params }: { params: { slug: string } }) {
     const [cardItems, setCardItems] = useState<BlogItem[]>([]);
     const [blogsData, setBlogsData] = useState<BlogItem[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const category = categories.filter(item => item.toLowerCase() === use(params).slug)[0];
+    const category = categories.filter(item => item.toLowerCase() === params.slug)[0];
 
     const resizeAllItemsGridRow = (): void => {
         cardItems?.forEach((item, index) => {
@@ -34,6 +33,7 @@ export default function Category({ params }: { params: Promise<{ slug: string }>
     }
 
     const handleSearch = (searchValue: string) => {
+        setLoading(true);
         getBlogs(searchValue).then(
             (data) => {
                 setBlogsData(data);
@@ -55,8 +55,8 @@ export default function Category({ params }: { params: Promise<{ slug: string }>
             }
         ).catch((err) => {
             toastError('Failed to load blogs data');
-        }
-        );
+        });
+        window.scrollTo(0, 0);
     }, []);
 
     return (

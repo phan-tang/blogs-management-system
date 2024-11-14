@@ -34,7 +34,6 @@ export default function About() {
                             <h3>How.</h3>
                             <p>Lorem ipsum Nisi amet fugiat eiusmod et aliqua ad qui ut nisi Ut aute anim mollit fugiat qui sit ex occaecat et eu mollit nisi pariatur fugiat deserunt dolor veniam reprehenderit aliquip magna nisi consequat aliqua veniam in aute ullamco Duis laborum ad non pariatur sit.</p>
                         </div>
-
                     </div>
                 </div>
             </div>

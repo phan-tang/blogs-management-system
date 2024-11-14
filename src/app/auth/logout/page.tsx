@@ -8,6 +8,7 @@ import { toastSuccess } from "@/app/lib/toastify";
 
 export default function Logout() {
     const router = useRouter();
+
     const handleLogout = () => {
         sessionStorage.clear();
         toastSuccess("Logout successfully");
