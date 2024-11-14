@@ -44,7 +44,7 @@ export default function AlbumsManagement() {
         <>
             {loading && <Loading />}
             {!loading && <div className="page">
-                <div>
+                <div className="page-content">
                     <div className={styles.albums}>
                         <h3>Albums Management</h3>
                         <CustomTable tableData={tableItems} tableName="albums" />

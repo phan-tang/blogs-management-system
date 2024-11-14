@@ -27,6 +27,10 @@
             }
 
             .entryTitle {
+                @media only screen and (max-width:600px) {
+                    font-size: 1.8rem;
+                }
+
                 font-size: 3.3rem;
                 line-height: 1.364;
                 margin-bottom: 0.9rem;
