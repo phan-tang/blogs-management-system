@@ -43,6 +43,7 @@ export default function Home() {
     ).catch((err) => {
       toastError('Failed to load blogs data')
     });
+    window.scrollTo(0, 0);
   }, []);
 
   return (

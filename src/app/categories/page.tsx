@@ -32,6 +32,7 @@ export default function Categories() {
     }
 
     const handleSearch = (searchValue: string) => {
+        setLoading(true);
         getBlogs(searchValue).then(
             (data) => {
                 setBlogsData(data);
@@ -53,6 +54,7 @@ export default function Categories() {
         ).catch((err) => {
             toastError('Failed to load blogs data')
         });
+        window.scrollTo(0, 0);
     }, []);
 
     return (

@@ -10,7 +10,7 @@ import styles from './pictureCarousel.module.scss';
 export default function PictureCarousel({ carouselId }: { carouselId: string }) {
 
     return (
-        <Carousel className={styles.pictureCarousel} id={carouselId}>
+        <Carousel className={styles.pictureCarousel} controls={false} id={carouselId}>
             {pictures.map((picture, index) => {
                 return (
                     <Carousel.Item className={styles.carouselItem} style={{ backgroundImage: `url(${picture.sourceLink})` }} key={`carousel-item-${index}`}>

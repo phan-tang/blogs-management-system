@@ -25,7 +25,7 @@ export default function AlbumsManagement() {
     }
 
     useEffect(() => {
-        let user = sessionStorage.getItem('user');
+        const user = sessionStorage.getItem('user');
         if (!user) {
             router.push('/auth/login');
         }
@@ -38,6 +38,7 @@ export default function AlbumsManagement() {
         ).catch((err) => {
             toastError('Failed to load albums data');
         });
+        window.scrollTo(0, 0);
     }, []);
 
     return (

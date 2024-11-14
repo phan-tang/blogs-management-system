@@ -1,19 +1,18 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import { Button, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { NavItem } from "@/app/models/navItemModel";
 import { offcanvasItems, userUnknownImage } from "@/app/lib/constants";
-import { getSourceLink } from "@/app/lib/plugins";
-
 import './customOffcanvas.scss';
 
 export default function CustomOffcanvas() {
+    const [user, setUser] = useState<string | null>(null);
+
     const pathName = usePathname();
-    let user = sessionStorage ? sessionStorage.getItem('user') : null;
     const currentUser: {
         email: string;
         password: string;
@@ -37,6 +36,11 @@ export default function CustomOffcanvas() {
         }
         return 'block';
     }
+
+    useEffect(() => {
+        setUser(sessionStorage.getItem('user'));
+    }, [])
+
     return (
         <div className="offcanvas-wrapper">
             <div className="offcanvas-button">

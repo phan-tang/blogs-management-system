@@ -26,7 +26,7 @@ export default function UsersManagement() {
     }
 
     useEffect(() => {
-        let user = sessionStorage.getItem('user');
+        const user = sessionStorage.getItem('user');
         if (!user) {
             router.push('/auth/login');
         }
@@ -39,6 +39,7 @@ export default function UsersManagement() {
         ).catch((err) => {
             toastError('Failed to load users data');
         });
+        window.scrollTo(0, 0);
     }, []);
 
     return (

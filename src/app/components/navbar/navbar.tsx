@@ -1,16 +1,17 @@
 'use client'
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { navItems } from '@/app/lib/constants';
-import { getSourceLink } from '@/app/lib/plugins';
 import { NavItem } from '@/app/models/navItemModel';
 import styles from './navbar.module.scss';
 
 export default function Navbar() {
+    const [user, setUser] = useState<string | null>(null);
+
     const pathName = usePathname();
-    let user = sessionStorage ? sessionStorage.getItem('user') : null;
     const currentUser: {
         email: string;
         password: string;
@@ -29,6 +30,10 @@ export default function Navbar() {
         }
         return 'inline-block';
     }
+
+    useEffect(() => {
+        setUser(sessionStorage.getItem('user'));
+    }, []);
 
     return (
         <nav className={styles.navbarWrap}>
