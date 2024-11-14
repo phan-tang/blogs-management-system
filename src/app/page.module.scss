@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
 
-    &Content {
+    .homeContent {
         max-width: 1100px;
+        width: 100%;
     }
 }

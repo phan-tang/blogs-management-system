@@ -81,7 +81,7 @@ td:last-child {
 
 .masonry {
   max-width: 1440px;
-  width: 94%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   gap: 5px;
