@@ -1,0 +1,24 @@
+.searchField {
+    width: 50%;
+
+    input {
+        padding: 15px;
+        color: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.1);
+
+        &::placeholder {
+            text-transform: capitalize;
+        }
+
+        &:focus {
+            background: #151515;
+            color: white;
+            border-color: lightgrey;
+            box-shadow: 0 0 0 .25rem lightgrey;
+
+            &::placeholder {
+                color: lightgrey;
+            }
+        }
+    }
+}

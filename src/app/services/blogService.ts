@@ -5,10 +5,11 @@ import { images, categories } from "../lib/constants";
 const blogUrl = '/api/blogs';
 const commentUrl = '/api/comments';
 
-export async function getBlogs(): Promise<BlogItem[]> {
+export async function getBlogs(searchParam?: string | null): Promise<BlogItem[]> {
     const response = await fetch(blogUrl);
     let responseData: { data: Post[] } = await response.json();
-    return responseData.data.map((element => {
+    let filteredData = searchParam ? responseData.data.filter(item => item.title.includes(searchParam.toLowerCase())) : responseData.data
+    return filteredData.map((element => {
         return transformBlogData(element);
     }));
 }

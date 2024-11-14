@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-
 import Loading from '../loading';
 import Card from '../components/card/card';
+import SearchField from '../components/searchField/searchField';
 import CustomPagination from '../components/customPagination/customPagination';
 import { BlogItem } from '../models/blogModel';
 import { getBlogs } from '../services/blogService';
@@ -31,6 +31,18 @@ export default function Categories() {
         window.scrollTo(0, 0);
     }
 
+    const handleSearch = (searchValue: string) => {
+        getBlogs(searchValue).then(
+            (data) => {
+                setBlogsData(data);
+                setCardItems(data.slice(0, pageSize));
+                setLoading(false);
+            }
+        ).catch((err) => {
+            toastError('Failed to load blogs data')
+        });
+    }
+
     useEffect(() => {
         getBlogs().then(
             (data) => {
@@ -51,6 +63,9 @@ export default function Categories() {
                     <div className="row">
                         <div className="col-12">
                             <h1>Categories</h1>
+                            <div className={styles.search}>
+                                <SearchField handleSearch={handleSearch} />
+                            </div>
                         </div>
                     </div>
                 </div>

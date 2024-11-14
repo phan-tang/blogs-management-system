@@ -5,6 +5,7 @@ import { useEffect, useState, use } from 'react';
 import Loading from '../../loading';
 import Card from '../../components/card/card';
 import CustomPagination from '@/app/components/customPagination/customPagination';
+import SearchField from '@/app/components/searchField/searchField';
 import { BlogItem } from '../../models/blogModel';
 import { getBlogs } from '@/app/services/blogService';
 import { toastError } from '@/app/lib/toastify';
@@ -32,6 +33,18 @@ export default function Category({ params }: { params: Promise<{ slug: string }>
         window.scrollTo(0, 0);
     }
 
+    const handleSearch = (searchValue: string) => {
+        getBlogs(searchValue).then(
+            (data) => {
+                setBlogsData(data);
+                setCardItems(data.slice(0, pageSize));
+                setLoading(false);
+            }
+        ).catch((err) => {
+            toastError('Failed to load blogs data')
+        });
+    }
+
     useEffect(() => {
         getBlogs().then(
             (data) => {
@@ -54,6 +67,9 @@ export default function Category({ params }: { params: Promise<{ slug: string }>
                     <div className="row">
                         <div className="col-12">
                             <h1>Category: {category}</h1>
+                            <div className={styles.search}>
+                                <SearchField handleSearch={handleSearch} />
+                            </div>
                         </div>
                     </div>
                 </div>
