@@ -6,7 +6,7 @@ export default function About() {
         <section className={styles.about}>
             <div className={styles.row}>
                 <div className={styles.contentMedia}>
-                    <Image src={"/images/thumbs/about-us.jpg"} alt='content-media' height={100} width={100} />
+                    <Image src={"/images/thumbs/about-us.jpg"} alt='content-media' height={400} width={1000} />
                 </div>
                 <div className={styles.primaryContent}>
                     <h1 className={styles.entryTitle}>Learn More About Us.</h1>

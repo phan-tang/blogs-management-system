@@ -13,7 +13,7 @@ export default function Card({ cardItem, id }: { cardItem: BlogItem, id: string 
             <div className='content'>
                 <div className={styles.entryThumb}>
                     <a href={`/blog/${cardItem.id}`} className={styles.thumbLink}>
-                        <Image src={`/${cardItem.sourceLink}`} alt={cardItem.title.replaceAll(' ', '-')} width={100} height={100} />
+                        <Image src={`/${cardItem.sourceLink}`} alt={cardItem.title.replaceAll(' ', '-')} width={400} height={400} />
                     </a>
                     {cardItem.audioLink && <div className={styles.audioWrap}>
                         <audio id="player" src={getSourceLink(cardItem.audioLink, pathName)} controls></audio>

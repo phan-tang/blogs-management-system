@@ -60,6 +60,16 @@ td {
   border-bottom: 1px solid #E8E8E8;
 }
 
+@media only screen and (max-width:520px) {
+
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #E8E8E8;
+  }
+}
+
 th {
   color: #151515;
 }

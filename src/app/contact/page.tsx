@@ -7,13 +7,6 @@ export default function Contact() {
                 <div className={"row " + styles.normal}>
                     <div className="col-12">
                         <section>
-                            {/* <div className="content-media">
-                                <div id="map-wrap">
-                                    <div id="map-container"></div>
-                                    <div id="map-zoom-in"></div>
-                                    <div id="map-zoom-out"></div>
-                                </div>
-                            </div> */}
                             <div className={styles.primaryContent}>
                                 <h1 className="entry-title add-bottom">Get In Touch With Us.</h1>
                                 <p className="lead">Lorem ipsum Deserunt est dolore Ut Excepteur nulla occaecat magna occaecat Excepteur nisi esse veniam dolor consectetur minim qui nisi esse deserunt commodo ea enim ullamco non voluptate consectetur minim aliquip Ut incididunt amet ut cupidatat.</p>

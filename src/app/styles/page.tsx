@@ -148,14 +148,12 @@ export default function Styles() {
                 <div className={"row " + styles.normal}>
                     <div className="col-6">
                         <h3>Responsive Image</h3>
-                        <p>
-                            <Image width={120} height={120} alt="sample-image" className={styles.fullImage} src={"/images/shutterbug.jpg"} />
-                        </p>
+                        <Image width={500} height={200} alt="sample-image" className={styles.fullImage} src={"/images/shutterbug.jpg"} />
                     </div>
                     <div className="col-6">
                         <h3>Responsive video</h3>
                         <div>
-                            <iframe src="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=F64B39" width="500" height="281" allowFullScreen></iframe>
+                            <iframe src="http://player.vimeo.com/video/14592941?title=0&amp;byline=0&amp;portrait=0&amp;color=F64B39" width="100%" height="auto" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,8 @@
 .styles {
+    @media only screen and (max-width:520px) {
+        padding: 0 1rem;
+    }
+
     margin-top: 6.6rem;
     padding: 0 2rem;
 
@@ -7,6 +11,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        p {
+            @media only screen and (max-width:520px) {
+                font-size: 0.7rem;
+            }
+
+            font-size: 1rem;
+        }
+
+        h1 {
+            @media only screen and (max-width:520px) {
+                font-size: 1.4rem;
+            }
+
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            @media only screen and (max-width:520px) {
+                font-size: 1rem;
+            }
+
+            font-size: 2rem;
+        }
 
         .narrow {
             text-align: center;
@@ -39,7 +67,13 @@
         }
 
         .dropCap {
+
             &::first-letter {
+                @media only screen and (max-width:520px) {
+                    font-size: 3rem;
+                    line-height: 2.5rem;
+                }
+
                 float: left;
                 margin: 0;
                 padding: .7rem .6rem 0 0;
@@ -52,23 +86,38 @@
         }
 
         blockquote {
+            @media only screen and (max-width:520px) {
+                padding-left: 2.2rem;
+                margin: 2.2rem 0;
+            }
+
             margin: 4.2rem 0;
             padding-left: 4.2rem;
             position: relative;
 
             &:before {
+                @media only screen and (max-width:520px) {
+                    font-size: 5rem;
+                }
+
                 content: "\201C";
                 font-size: 10rem;
                 line-height: 0px;
                 margin: 0;
                 color: rgba(0, 0, 0, 0.2);
-                font-family: arial, sans-serif;
+                font-family: arial,
+                sans-serif;
                 position: absolute;
                 top: 3.6rem;
                 left: 0;
             }
 
             p {
+                @media only screen and (max-width:520px) {
+                    font-size: 0.8rem;
+                    line-height: 1;
+                }
+
                 padding: 0;
                 font-size: 1.2rem;
                 line-height: 1.75;
