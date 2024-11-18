@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a Blog management system built with NextJS. Data is provided by fake API "https://jsonplaceholder.typicode.com/" and transformed with necessary attributes, images are randomly selected from defined list. API routes for the transformed data:
+
+- /api/blogs: Get the list of blogs.
+- /api/blogs/id: Get a blog by ID.
+- /api/comments: Get the list of comments.
+- /api/admin/users: Get the list of users.
+- /api/admin/albums: Get the list of albums.
+
+Notes: Use admin account with email `admin@gmail.com`, password `123` to login.
 
 ## Getting Started
 
