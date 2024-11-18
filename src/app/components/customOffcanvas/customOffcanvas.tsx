@@ -55,7 +55,7 @@ export default function CustomOffcanvas() {
                     <Offcanvas.Title>
                         <div className="row">
                             <div className="col-4">
-                                <Image width={50} height={50} src={currentUser ? `/${currentUser.image}` : `/${userUnknownImage}`} alt="user-avatar" />
+                                <Image width={400} height={400} src={currentUser ? `/${currentUser.image}` : `/${userUnknownImage}`} alt="user-avatar" />
                             </div>
                             <div className="col-8 title-action">
                                 {currentUser ?

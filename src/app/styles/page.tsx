@@ -24,7 +24,7 @@ export default function Styles() {
                 <div className={"row " + styles.normal}>
                     <div className="col-6">
                         <h3>Paragraph and Image</h3>
-                        <p><a href="#"><Image width={120} height={120} className={styles.pullLeft} alt="sample-image" src={"/images/sample-image.jpg"} /></a>
+                        <p><a href="#"><Image width={200} height={200} className={styles.pullLeft} alt="sample-image" src={"/images/sample-image.jpg"} /></a>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque posuere nunc justo tempus leo. </p>
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentumodio, ac blandit ante orci ut diam.
@@ -148,7 +148,7 @@ export default function Styles() {
                 <div className={"row " + styles.normal}>
                     <div className="col-6">
                         <h3>Responsive Image</h3>
-                        <Image width={500} height={200} alt="sample-image" className={styles.fullImage} src={"/images/shutterbug.jpg"} />
+                        <Image width={600} height={300} alt="sample-image" className={styles.fullImage} src={"/images/shutterbug.jpg"} />
                     </div>
                     <div className="col-6">
                         <h3>Responsive video</h3>

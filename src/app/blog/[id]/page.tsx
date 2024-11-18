@@ -64,7 +64,7 @@ export default function Blog({ params }: { params: { id: string } }) {
                         <article>
                             <div className={'row ' + styles.primaryContent}>
                                 <div className='col-lg-4 col-md-4 col-sm-6 col-xs-6'>
-                                    <Image src={`/${blogItem.sourceLink}`} alt={blogItem.title.replaceAll(' ', '-')} width={100} height={100} />
+                                    <Image src={`/${blogItem.sourceLink}`} alt={blogItem.title.replaceAll(' ', '-')} width={400} height={800} />
                                 </div>
                                 <div className='col-lg-8 col-md-8 col-sm-6 col-xs-6'>
                                     <div className={styles.blogInfo}>
@@ -113,7 +113,7 @@ export default function Blog({ params }: { params: { id: string } }) {
                                 <a href="#">orci</a><a href="#">lectus</a><a href="#">varius</a><a href="#">turpis</a>
                             </p>
                             <div className={styles.authorProfile}>
-                                <Image src={`/${userImages[getFixedIndex(blogItem.id, userImages.length)]}`} alt="author-avatar" width={100} height={100} />
+                                <Image src={`/${userImages[getFixedIndex(blogItem.id, userImages.length)]}`} alt="author-avatar" width={400} height={400} />
                                 <div className="about">
                                     <h4><a href="#">Jonathan Smith</a></h4>
                                     <p>Alias aperiam at debitis deserunt dignissimos dolorem doloribus, fuga fugiat impedit laudantium magni maxime nihil nisi quidem quisquam sed ullam voluptas voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.

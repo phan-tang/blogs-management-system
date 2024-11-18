@@ -62,7 +62,7 @@ export default function Navbar() {
                 </>
                 {currentUser && <li>
                     <div>
-                        <Image width={50} height={50} src={`/${currentUser.image}`} alt="user-avatar" />
+                        <Image width={400} height={400} src={`/${currentUser.image}`} alt="user-avatar" />
                         <ul className={styles.subMenu}>
                             <li>
                                 <Link href="/admin/users" title="Admin">Admin</Link>

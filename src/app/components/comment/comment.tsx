@@ -10,7 +10,7 @@ export default function Comment({ comment }: { comment: CommentItem }) {
     return (
         <li className={styles.comment}>
             <div className={styles.avatar}>
-                <Image width={50} height={50} src={`/${userImages[getFixedIndex(comment.id, userImages.length)]}`} alt="user-avatar" />
+                <Image width={400} height={400} src={`/${userImages[getFixedIndex(comment.id, userImages.length)]}`} alt="user-avatar" />
             </div>
             <div>
                 <div className={styles.commentInfo}>
