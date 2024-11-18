@@ -10,7 +10,7 @@ import { getRandomIndex } from "@/app/lib/plugins";
 export default function Login() {
     const router = useRouter();
     const handleLogin = (formData: any): void => {
-        if (formData.email === "admin" && formData.password === "123") {
+        if (formData.email === "admin@gmail.com" && formData.password === "123") {
             sessionStorage.setItem('user', JSON.stringify({ ...formData, image: userImages[getRandomIndex(userImages.length)] }));
             toastSuccess("Login successfully");
             router.push('/admin/users');
