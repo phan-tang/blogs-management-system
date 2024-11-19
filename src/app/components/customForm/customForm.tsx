@@ -13,6 +13,12 @@ export default function CustomForm({ formItem, handleSubmitForm }: { formItem: F
         setFormData(data);
     }
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.key === 'Enter' || event.key === 'NumpadEnter') {
+            handleSubmitForm(formData);
+        }
+    }
+
     const submitForm = () => {
         handleSubmitForm(formData);
     }
@@ -28,6 +34,7 @@ export default function CustomForm({ formItem, handleSubmitForm }: { formItem: F
                                 as={field.type === "textarea" ? "textarea" : "input"}
                                 type={field.type === "password" ? "password" : "text"}
                                 placeholder={field.label}
+                                onKeyDown={handleKeyDown}
                                 onChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ): void => getFormData(event.target.value, field.key)} />
