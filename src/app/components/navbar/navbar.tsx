@@ -33,7 +33,7 @@ export default function Navbar() {
 
     useEffect(() => {
         setUser(sessionStorage.getItem('user'));
-    }, []);
+    }, [pathName]);
 
     return (
         <nav className={styles.navbarWrap}>
